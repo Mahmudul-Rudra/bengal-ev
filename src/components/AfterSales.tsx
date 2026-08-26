@@ -13,9 +13,6 @@ import {
   FaMapMarkerAlt,
   FaChevronDown,
   FaHeadset,
-  FaBatteryFull,
-  FaMicrochip,
-  FaCarBattery,
 } from "react-icons/fa";
 
 const WHATSAPP = "8801645252756";
@@ -51,12 +48,6 @@ const steps = [
   { title: "Service & Parts", text: "Repairs and maintenance using genuine components." },
   { title: "Quality Check", text: "Every vehicle is tested before it leaves our hands." },
   { title: "Back on the Road", text: "You ride away with confidence, and we stay reachable." },
-];
-
-const warranty = [
-  { icon: <FaCarBattery />, part: "Vehicle Frame", period: "12 Months" }, // TODO: set your real period
-  { icon: <FaBatteryFull />, part: "Battery", period: "12 Months" }, // TODO: set your real period
-  { icon: <FaMicrochip />, part: "Motor & Controller", period: "12 Months" }, // TODO: set your real period
 ];
 
 const locations = [
@@ -240,43 +231,6 @@ export function AfterSales() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* WARRANTY */}
-      <section className="bg-white px-6 py-20 md:py-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-bengal-dark">Warranty Coverage</h2>
-            <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
-              Peace of mind on the core of your vehicle.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {warranty.map((w, i) => (
-              <motion.div
-                key={w.part}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-bengal-dark to-[#16241d] text-white p-8 text-center"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-white/10 text-emerald-300 text-2xl flex items-center justify-center mx-auto mb-5">
-                  {w.icon}
-                </div>
-                <p className="text-gray-300 text-sm uppercase tracking-wider">{w.part}</p>
-                <p className="mt-2 text-3xl font-extrabold bg-gradient-to-r from-emerald-300 to-bengal-green bg-clip-text text-transparent">
-                  {w.period}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <p className="mt-8 text-center text-xs text-gray-400 max-w-2xl mx-auto">
-            * Indicative periods. Actual warranty varies by model and usage. Contact us for the exact coverage on your vehicle.
-          </p>
         </div>
       </section>
 
