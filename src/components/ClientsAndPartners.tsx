@@ -14,6 +14,7 @@ const clients = [
   {name: "Riverfish", logo:"/assets/Partners/river_fish.png"}, 
   {name: "Agraniautomobile", logo:"/assets/Partners/aal.png"},
   {name: "moto", logo:"/assets/Partners/moto.png"},
+  {name: "arabian", logo:"/assets/Partners/arabian.png"}
 ];
 
 export function ClientsAndPartners() {
