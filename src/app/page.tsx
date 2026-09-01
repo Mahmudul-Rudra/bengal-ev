@@ -4,6 +4,7 @@ import { About } from "@/components/About";
 import { ClientsAndPartners } from "@/components/ClientsAndPartners";
 import { AuthorizedDistributor } from "@/components/AuthorizedDistributor";
 import { MarketPresence } from "@/components/MarketPresence";
+import { Awards } from "@/components/Awards";
 import { ClientSliderWrapper } from "@/components/ClientWrapper";
 import { Gallery } from "@/components/Gallery";
 import { ContactSection } from "@/components/ContactSection";
@@ -21,10 +22,13 @@ export default function Home() {
       <ClientsAndPartners />
       <AuthorizedDistributor />
 
-      {/* These components have no built-in reveal, so wrap them */}
       <SectionReveal>
         <MarketPresence />
       </SectionReveal>
+
+      {/* Awards & Recognition */}
+      <Awards />
+
       <SectionReveal>
         <ClientSliderWrapper />
       </SectionReveal>
