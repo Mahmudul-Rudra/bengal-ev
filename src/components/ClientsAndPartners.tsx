@@ -29,12 +29,12 @@ export function ClientsAndPartners() {
             {clients.map((client, i) => (
               <div 
                 key={i} 
-                className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-100 hover:scale-110 transition-transform duration-300"
+                className="w-28 h-28 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-100 hover:scale-110 transition-transform duration-300"
               >
                 <img 
                   src={client.logo} 
                   alt={client.name} 
-                  className="max-w-[60%] max-h-[60%] object-contain"
+                  className="max-w-[72%] max-h-[72%] object-contain"
                 />
               </div>
             ))}

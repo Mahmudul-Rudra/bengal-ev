@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import { FaBars, FaTimes, FaChevronDown, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const links = [
   { href: "/", label: "Home" },
@@ -18,6 +18,10 @@ const serviceLinks = [
   { href: "/after-sales#faq", label: "FAQ" },
 ];
 
+const PHONE = "+8801645252756";
+const PHONE_DISPLAY = "+880 1645-252756";
+const EMAIL = "info@bevsbd.com";
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -31,6 +35,7 @@ export function Navbar() {
               src="/assets/Logo/logo.png"
               alt="Bengal EV Solutions Logo"
               fill
+              sizes="140px"
               className="object-contain"
               priority
             />
@@ -55,7 +60,6 @@ export function Navbar() {
               Service
               <FaChevronDown className="text-[10px] mt-0.5 group-hover:rotate-180 transition-transform duration-300" />
             </button>
-            {/* pt-3 acts as a hover bridge so the panel does not vanish */}
             <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
               <div className="w-60 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
                 {serviceLinks.map((s, i) => (
@@ -74,13 +78,27 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Desktop CTA */}
-        <Link
-          href="/#contact"
-          className="hidden md:inline-block bg-bengal-accent text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition shadow-md"
-        >
-          Contact Us
-        </Link>
+        {/* Right cluster: contact info + CTA (desktop) */}
+        <div className="hidden md:flex items-center gap-5">
+          {/* Phone + email, shown on large screens beside the button */}
+          <div className="hidden lg:flex flex-col items-end leading-tight text-xs text-bengal-dark">
+            <a href={`tel:${PHONE}`} className="flex items-center gap-1.5 hover:text-bengal-green transition-colors">
+              <FaPhoneAlt className="text-bengal-green text-[11px]" />
+              <span className="font-semibold">{PHONE_DISPLAY}</span>
+            </a>
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-1.5 hover:text-bengal-green transition-colors">
+              <FaEnvelope className="text-bengal-green text-[11px]" />
+              <span className="font-semibold">{EMAIL}</span>
+            </a>
+          </div>
+
+          <Link
+            href="/#contact"
+            className="bg-bengal-accent text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition shadow-md"
+          >
+            Contact Us
+          </Link>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -130,6 +148,16 @@ export function Navbar() {
                     {s.label}
                   </Link>
                 ))}
+              </div>
+
+              {/* Contact info in mobile menu */}
+              <div className="mt-2 pt-3 border-t border-gray-100 px-2 space-y-2 text-sm">
+                <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-bengal-dark hover:text-bengal-green transition-colors">
+                  <FaPhoneAlt className="text-bengal-green text-xs" /> {PHONE_DISPLAY}
+                </a>
+                <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-bengal-dark hover:text-bengal-green transition-colors">
+                  <FaEnvelope className="text-bengal-green text-xs" /> {EMAIL}
+                </a>
               </div>
 
               <Link

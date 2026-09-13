@@ -10,17 +10,23 @@ export function Particles({ quantity = 100 }: { quantity?: number }) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let particles: any[] = [];
-    let mouse = { x: -1000, y: -1000 };
+    let particles: { x: number; y: number; vx: number; vy: number }[] = [];
+    const mouse = { x: -1000, y: -1000 };
+    let rafId = 0;
 
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
+    const handleMouse = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+
     window.addEventListener("resize", resize);
+    window.addEventListener("mousemove", handleMouse);
     resize();
 
-    // Create particles
     for (let i = 0; i < quantity; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -38,7 +44,6 @@ export function Particles({ quantity = 100 }: { quantity?: number }) {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Magnetism
         const dx = mouse.x - p.x;
         const dy = mouse.y - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -47,7 +52,6 @@ export function Particles({ quantity = 100 }: { quantity?: number }) {
           p.y += dy * 0.005;
         }
 
-        // Screen wrap
         if (p.x < 0) p.x = canvas.width;
         if (p.x > canvas.width) p.x = 0;
         if (p.y < 0) p.y = canvas.height;
@@ -58,7 +62,6 @@ export function Particles({ quantity = 100 }: { quantity?: number }) {
         ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
         ctx.fill();
 
-        // Connect lines
         for (let j = i + 1; j < particles.length; j++) {
           const dx2 = p.x - particles[j].x;
           const dy2 = p.y - particles[j].y;
@@ -73,15 +76,19 @@ export function Particles({ quantity = 100 }: { quantity?: number }) {
           }
         }
       });
-      requestAnimationFrame(animate);
+
+      rafId = requestAnimationFrame(animate);
     };
 
-    window.addEventListener("mousemove", (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
-
     animate();
+
+    // Cleanup: stop the loop and remove listeners when this unmounts
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", handleMouse);
+      particles = [];
+    };
   }, [quantity]);
 
   return <canvas ref={canvasRef} className="fixed inset-0 -z-10" />;

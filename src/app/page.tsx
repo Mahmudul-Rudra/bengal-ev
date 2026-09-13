@@ -29,9 +29,13 @@ export default function Home() {
       {/* Awards & Recognition */}
       <Awards />
 
-      <SectionReveal>
-        <ClientSliderWrapper />
-      </SectionReveal>
+      {/* NOTE: no SectionReveal wrapper here.
+          This block (Solutions + Category + How It Works) is very tall, and
+          wrapping it in one reveal kept it invisible until ~10% of the whole
+          block scrolled into view, which looked like a delay. These sections
+          have their own internal motion, so they appear instantly on scroll. */}
+      <ClientSliderWrapper />
+
       <SectionReveal>
         <Gallery />
       </SectionReveal>

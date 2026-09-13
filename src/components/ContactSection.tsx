@@ -109,7 +109,7 @@ export function ContactSection() {
                 variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
                 className="text-4xl md:text-5xl font-extrabold leading-tight"
               >
-                Let&rsquo;s Talk{" "}
+                Let&rsquo;s talk about{" "}
                 <span className="bg-gradient-to-r from-emerald-300 to-bengal-green bg-clip-text text-transparent">
                   Energy
                 </span>
