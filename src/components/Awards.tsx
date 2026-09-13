@@ -10,6 +10,11 @@ const awards = [
     detail: "3rd, Territory Position · FY 2025-26",
     image: "/assets/Awards/akij_award.jpeg", // match your file name/extension
   },
+  {
+    title: "Certificate of Appreciation",
+    detail: "Fastest Growing Partnership in South Asia",
+    image: "/assets/Awards/haitai_award.jpeg", // match your file name/extension
+  },
   // {
   //   title: "Another Award",
   //   detail: "Category · Year",

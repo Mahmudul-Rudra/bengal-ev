@@ -46,7 +46,7 @@ export function Footer() {
           {/* Brand + statement */}
           <div className="md:col-span-5">
             <Link href="/" className="inline-flex">
-              <div className="relative w-[170px] h-[56px]">
+              <div className="relative w-[170px] h-[54px]">
                 <Image
                   src="/assets/Logo/logo.png"
                   alt="Bengal EV Solutions Logo"
