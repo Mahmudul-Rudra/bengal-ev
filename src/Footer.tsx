@@ -46,7 +46,7 @@ export function Footer() {
           {/* Brand + statement */}
           <div className="md:col-span-5">
             <Link href="/" className="inline-flex">
-              <div className="relative w-[170px] h-[56px]">
+              <div className="relative w-[170px] h-[54px]">
                 <Image
                   src="/assets/Logo/logo.png"
                   alt="Bengal EV Solutions Logo"
@@ -141,31 +141,13 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Bengal EV Solutions. All rights reserved.
+            © 2025 S. M. Mahmudul Hasan Rudra &amp; Bengal EV Solutions. All rights reserved.
           </p>
-
-          {/* Crafted by DCS Forge (code-built wordmark) */}
-          <a
-            href="https://dcs-forge.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="DCS Forge"
-            className="group inline-flex items-center gap-2.5 text-sm"
-          >
-            <span className="text-gray-400">Crafted by</span>
-            {/* stacked-bars icon: orange (widest) / green (medium) / ash (smallest) */}
-            <span className="flex flex-col items-center gap-[3px]" aria-hidden>
-              <span className="block w-6 h-[4px] rounded-full bg-bengal-accent" />
-              <span className="block w-[18px] h-[4px] rounded-full bg-bengal-green" />
-              <span className="block w-3 h-[4px] rounded-full bg-gray-400" />
-            </span>
-            <span className="font-serif font-bold tracking-tight text-[15px]">
-              <span className="text-white">DCS</span>{" "}
-              <span className="text-bengal-accent group-hover:brightness-110 transition">Forge</span>
-            </span>
-          </a>
+          <p className="text-gray-500 text-sm">
+            <span className="text-emerald-300">জনতার বাহন</span> · Green Mobility for Bangladesh
+          </p>
         </div>
       </div>
     </footer>
