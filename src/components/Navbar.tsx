@@ -43,7 +43,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8 text-bengal-dark font-medium text-sm">
+        <div className="hidden md:flex items-center gap-6 text-bengal-dark font-medium text-sm">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -78,26 +78,46 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Right cluster: contact info + CTA (desktop) */}
-        <div className="hidden md:flex items-center gap-5">
-          {/* Phone + email, shown on large screens beside the button */}
-          <div className="hidden lg:flex flex-col items-end leading-tight text-xs text-bengal-dark">
-            <a href={`tel:${PHONE}`} className="flex items-center gap-1.5 hover:text-bengal-green transition-colors">
-              <FaPhoneAlt className="text-bengal-green text-[11px]" />
-              <span className="font-semibold">{PHONE_DISPLAY}</span>
-            </a>
-            <a href={`mailto:${EMAIL}`} className="flex items-center gap-1.5 hover:text-bengal-green transition-colors">
-              <FaEnvelope className="text-bengal-green text-[11px]" />
-              <span className="font-semibold">{EMAIL}</span>
-            </a>
-          </div>
-
+        {/* Right cluster: CTA + contact info to its RIGHT */}
+        <div className="hidden md:flex items-center gap-4">
           <Link
             href="/#contact"
             className="bg-bengal-accent text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition shadow-md"
           >
             Contact Us
           </Link>
+
+          {/* Contact info, right of the button (large screens) */}
+          <div className="hidden lg:flex items-center gap-3">
+            {/* accent divider */}
+            <span className="h-9 w-px bg-gradient-to-b from-transparent via-bengal-green/40 to-transparent" />
+
+            <div className="flex flex-col gap-1.5">
+              <a href={`tel:${PHONE}`} className="group flex items-center gap-2">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-bengal-green to-emerald-600 text-white flex items-center justify-center text-[11px] shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                  <FaPhoneAlt />
+                </span>
+                <span className="flex flex-col leading-none">
+                  <span className="text-[9px] uppercase tracking-[0.15em] text-gray-400 font-bold mb-0.5">Call us</span>
+                  <span className="text-[13px] font-bold text-bengal-dark group-hover:text-bengal-green transition-colors">
+                    {PHONE_DISPLAY}
+                  </span>
+                </span>
+              </a>
+
+              <a href={`mailto:${EMAIL}`} className="group flex items-center gap-2">
+                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-bengal-green to-emerald-600 text-white flex items-center justify-center text-[11px] shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                  <FaEnvelope />
+                </span>
+                <span className="flex flex-col leading-none">
+                  <span className="text-[9px] uppercase tracking-[0.15em] text-gray-400 font-bold mb-0.5">Email</span>
+                  <span className="text-[13px] font-bold text-bengal-dark group-hover:text-bengal-green transition-colors">
+                    {EMAIL}
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -150,13 +170,25 @@ export function Navbar() {
                 ))}
               </div>
 
-              {/* Contact info in mobile menu */}
-              <div className="mt-2 pt-3 border-t border-gray-100 px-2 space-y-2 text-sm">
-                <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-bengal-dark hover:text-bengal-green transition-colors">
-                  <FaPhoneAlt className="text-bengal-green text-xs" /> {PHONE_DISPLAY}
+              {/* Contact info (mobile) */}
+              <div className="mt-2 pt-3 border-t border-gray-100 px-2 space-y-3">
+                <a href={`tel:${PHONE}`} className="group flex items-center gap-3">
+                  <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-bengal-green to-emerald-600 text-white flex items-center justify-center text-sm shadow-sm">
+                    <FaPhoneAlt />
+                  </span>
+                  <span className="flex flex-col leading-tight">
+                    <span className="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Call us</span>
+                    <span className="text-sm font-bold text-bengal-dark">{PHONE_DISPLAY}</span>
+                  </span>
                 </a>
-                <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-bengal-dark hover:text-bengal-green transition-colors">
-                  <FaEnvelope className="text-bengal-green text-xs" /> {EMAIL}
+                <a href={`mailto:${EMAIL}`} className="group flex items-center gap-3">
+                  <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-bengal-green to-emerald-600 text-white flex items-center justify-center text-sm shadow-sm">
+                    <FaEnvelope />
+                  </span>
+                  <span className="flex flex-col leading-tight">
+                    <span className="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Email</span>
+                    <span className="text-sm font-bold text-bengal-dark">{EMAIL}</span>
+                  </span>
                 </a>
               </div>
 
