@@ -74,7 +74,7 @@ export function Footer() {
 
             {/* Social badges */}
             <div className="flex gap-3 mt-6">
-              <a href={"https://www.facebook.com/share/19hMDa2bdW/"} target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook"
                  className="w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-bengal-green hover:scale-110 transition-all duration-300">
                 <FaFacebook size={20} />
               </a>
