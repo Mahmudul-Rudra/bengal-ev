@@ -15,7 +15,7 @@ const quickLinks = [
 ];
 
 const locations = [
-  { name: "Head Office", address: "House 68, 69/A, Rd 9/6, Blk G, S. Banasree, Khilgaon, Dhaka" },
+  { name: "Head Office", address: "HALMARS Tower, 66 (Old) Outer Circular Road (New 5 Shahid Sangbadik Salina Parvin Sarak), Suite 7B, Moghbazar, Dhaka 1217, Bangladesh" },
   { name: "Exhibition Center", address: "10 Mirpara, Masterbari, Banasree – Demra Road, Demra, Dhaka" },
 ];
 
