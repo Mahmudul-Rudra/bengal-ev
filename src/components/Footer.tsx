@@ -64,7 +64,7 @@ export function Footer() {
               {/* decorative quote */}
               <span className="absolute -top-3 right-4 text-6xl leading-none font-serif text-bengal-green/30 select-none">&rdquo;</span>
 
-              <p className="text-gray-200 text-base md:text-[17px] leading-relaxed">
+              <p className="text-gray-200 text-base md:text-[17px] leading-relaxed text-justify">
                 BEVS is dedicated to exploring, applying, and promoting{" "}
                 <span className="text-emerald-300 font-semibold">innovative green energy models</span>! Through a reliable global sourcing, local dealer networking, long-lasting partnership model, on-call technical solutions, readily available hardware &amp; spare parts and top class{" "}
                 <span className="text-emerald-300 font-semibold">QUALITY</span> ensurance, we advocate for and drive the{" "}
