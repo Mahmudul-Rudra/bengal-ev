@@ -14,7 +14,11 @@ const clients = [
   {name: "Riverfish", logo:"/assets/Partners/river_fish.png"}, 
   {name: "Agraniautomobile", logo:"/assets/Partners/aal.png"},
   {name: "moto", logo:"/assets/Partners/moto.png"},
-  {name: "arabian", logo:"/assets/Partners/arabian.png"}
+  {name: "arabian", logo:"/assets/Partners/arabian.png"},
+  {name: "ezygo", logo: "/assets/Partners/ezygo.png"},
+  {name: "konchi", logo: "/assets/Partners/konchi.png"},
+  {name: "udps", logo: "/assets/Partners/udps.png"},
+  {name: "safe_toiletries", logo: "/assets/Partners/safe_toiletries.jpg"}
 ];
 
 export function ClientsAndPartners() {
