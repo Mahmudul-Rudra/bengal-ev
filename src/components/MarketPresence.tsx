@@ -10,7 +10,7 @@ type IconKind = "battery" | "tricycle" | "store" | "swap";
 /* ------------------------------------------------------------------ */
 function TricycleIcon({ spin }: { spin: boolean }) {
   const wheelSpin = spin
-    ? { animate: { rotate: 360 }, transition: { duration: 2.4, repeat: Infinity, ease: "linear" } }
+    ? { animate: { rotate: 360 }, transition: { duration: 2.4, repeat: Infinity, ease: "linear" as const } }
     : {};
   const wheelStyle = { transformBox: "fill-box" as const, transformOrigin: "center" };
 
@@ -180,7 +180,7 @@ export function MarketPresence() {
                 initial={{ opacity: 0, y: 28, scale: 0.8, rotate: -8, filter: "blur(6px)" }}
                 whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] as const }}
               >
                 {/* Badge with radar-ping rings */}
                 <motion.div
@@ -188,22 +188,6 @@ export function MarketPresence() {
                   whileHover={reduce ? undefined : { scale: 1.12 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
                 >
-                  {!reduce && (
-                    <>
-                      <motion.span
-                        aria-hidden
-                        className="absolute inset-0 rounded-full border-2 border-white/50"
-                        animate={{ scale: [1, 1.55], opacity: [0.55, 0] }}
-                        transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut", delay: i * 0.35 }}
-                      />
-                      <motion.span
-                        aria-hidden
-                        className="absolute inset-0 rounded-full border border-white/40"
-                        animate={{ scale: [1, 1.8], opacity: [0.4, 0] }}
-                        transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut", delay: i * 0.35 + 1.2 }}
-                      />
-                    </>
-                  )}
                   <span className="relative z-10 transition-transform duration-300 group-hover:-translate-y-0.5">
                     <StatIcon kind={stat.kind} reduce={reduce} />
                   </span>
