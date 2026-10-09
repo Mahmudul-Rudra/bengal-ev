@@ -19,17 +19,13 @@ function TricycleIcon({ spin }: { spin: boolean }) {
       {/* body + canopy + skirt, window as a cut-out */}
       <path
         fillRule="evenodd"
-        d="M86 300 L86 196 C86 150 118 120 168 118 L300 118
-           C330 118 352 132 366 160 L404 250 C410 264 414 280 414 296
-           L414 300 L430 300 L430 338 L70 338 L70 300 Z
-           M150 160 L300 160 L326 224 L150 224 Z"
+        d="M86 300 L86 196 C86 150 118 120 168 118 L300 118 C330 118 352 132 366 160 L404 250 C410 264 414 280 414 296 L414 300 L430 300 L430 338 L70 338 L70 300 Z M150 160 L300 160 L326 224 L150 224 Z"
       />
       {/* rear wheel with hub cut-out */}
       <motion.g style={wheelStyle} {...wheelSpin}>
         <path
           fillRule="evenodd"
-          d="M92 356 a58 58 0 1 0 116 0 a58 58 0 1 0 -116 0 z
-             M126 356 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0 z"
+          d="M92 356 a58 58 0 1 0 116 0 a58 58 0 1 0 -116 0 z M126 356 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0 z"
         />
       </motion.g>
       {/* front fender */}
@@ -38,8 +34,7 @@ function TricycleIcon({ spin }: { spin: boolean }) {
       <motion.g style={wheelStyle} {...wheelSpin}>
         <path
           fillRule="evenodd"
-          d="M358 372 a42 42 0 1 0 84 0 a42 42 0 1 0 -84 0 z
-             M383 372 a17 17 0 1 0 34 0 a17 17 0 1 0 -34 0 z"
+          d="M358 372 a42 42 0 1 0 84 0 a42 42 0 1 0 -84 0 z M383 372 a17 17 0 1 0 34 0 a17 17 0 1 0 -34 0 z"
         />
       </motion.g>
     </svg>
