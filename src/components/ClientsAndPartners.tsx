@@ -19,6 +19,7 @@ const clients = [
   {name: "konchi", logo: "/assets/Partners/konchi.png"},
   {name: "udps", logo: "/assets/Partners/udps.png"},
   {name: "cre", logo: "/assets/Partners/cre.png"},
+  {name: "cre", logo: "/assets/Partners/safe_toiletries.jpg"},
 
 ];
 
